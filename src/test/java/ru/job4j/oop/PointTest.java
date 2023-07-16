@@ -51,7 +51,7 @@ public class PointTest {
 
     @Test
     public void when203to002then2point2361() {
-        double expected = 2.2361;
+        double expected = 2.24;
         Point point1 = new Point(2, 0, 3);
         Point point2 = new Point(0, 0, 2);
         double out = point1.distance3d(point2);

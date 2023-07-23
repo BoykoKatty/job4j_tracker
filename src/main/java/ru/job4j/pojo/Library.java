@@ -14,7 +14,7 @@ public class Library {
         bookShell[3] = temp;
         System.out.println();
         for (int i = 0; i < bookShell.length; i++) {
-            if (bookShell[i].getName().equals("Clean Code")) {
+            if ("Clean Code".equals(bookShell[i].getName())) {
                 System.out.println(bookShell[i]);
             }
         }

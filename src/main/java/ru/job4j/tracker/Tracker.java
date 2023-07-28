@@ -66,4 +66,18 @@ public class Tracker {
         return rsl;
     }
 
+    @Override
+    public String toString() {
+        Item[] activeItems = findAll();
+        StringBuilder stringBuilder = new StringBuilder();
+        if (activeItems.length > 0) {
+            for (Item item : activeItems) {
+                stringBuilder.append(stringBuilder.isEmpty() ? "" : System.lineSeparator());
+                stringBuilder.append(item);
+            }
+        } else {
+            stringBuilder.append("Хранилище еще не содержит заявок");
+        }
+        return stringBuilder.toString();
+    }
 }

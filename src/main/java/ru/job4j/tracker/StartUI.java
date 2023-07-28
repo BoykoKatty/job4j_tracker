@@ -2,6 +2,8 @@ package ru.job4j.tracker;
 
 import java.util.Scanner;
 
+import static ru.job4j.tracker.Tracker.generateDescription;
+
 public class StartUI {
 
     public void init(Scanner scanner, Tracker tracker) {
@@ -18,7 +20,7 @@ public class StartUI {
                 tracker.add(item);
             } else if (select == 1) {
                 System.out.println("=== Show all items ===");
-                System.out.println(tracker);
+                System.out.println(generateDescription(tracker.findAll()));
             } else if (select == 2) {
                 System.out.println("=== Edit item ===");
                 System.out.print("Enter id: ");
@@ -37,6 +39,13 @@ public class StartUI {
                 int id = Integer.parseInt(scanner.nextLine());
                 Item item = tracker.findById(id);
                 System.out.println(item != null ? item : "Заявка с введенным id: " + id + " не найдена.");
+            } else if (select == 5) {
+                System.out.println("=== Find items by name ===");
+                System.out.print("Enter name: ");
+                String name = scanner.nextLine();
+                Item[] items = tracker.findByName(name);
+                System.out.println(
+                        items.length > 0 ? generateDescription(items) : "Заявки с именем: " + name + " не найдены.");
             } else if (select == 6) {
                 run = false;
             }

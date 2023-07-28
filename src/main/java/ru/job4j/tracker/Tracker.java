@@ -66,9 +66,7 @@ public class Tracker {
         return rsl;
     }
 
-    @Override
-    public String toString() {
-        Item[] activeItems = findAll();
+    public static String generateDescription(Item[] activeItems) {
         StringBuilder stringBuilder = new StringBuilder();
         if (activeItems.length > 0) {
             for (Item item : activeItems) {

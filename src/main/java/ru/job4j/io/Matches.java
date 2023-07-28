@@ -13,13 +13,8 @@ public class Matches {
             player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
             String matchesStr = input.nextLine();
-            Integer matches;
-            try {
-                matches = Integer.valueOf(matchesStr);
-            } catch (NumberFormatException e) {
-                matches = null;
-            }
-            if (matches == null || count < matches || matches < 1 || matches > 3) {
+            int matches = Integer.parseInt(matchesStr);
+            if (matches < 1 || matches > Math.min(3, count)) {
                 System.out.println("Некорректный ввод.");
             } else {
                 count -= matches;

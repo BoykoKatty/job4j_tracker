@@ -19,6 +19,13 @@ public class StartUI {
             } else if (select == 1) {
                 System.out.println("=== Show all items ===");
                 System.out.println(tracker);
+            } else if (select == 2) {
+                System.out.println("=== Edit item ===");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                System.out.print("Enter name: ");
+                Item item = new Item(scanner.nextLine());
+                System.out.println(tracker.replace(id, item) ? "Заявка изменена успешно." : "Ошибка замены заявки.");
             } else if (select == 6) {
                 run = false;
             }

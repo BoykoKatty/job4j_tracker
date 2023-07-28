@@ -1,4 +1,4 @@
-package ru.job4j.polymorph;
+package ru.job4j.poly;
 
 public interface Vehicle {
 

@@ -2,8 +2,6 @@ package ru.job4j.tracker;
 
 import java.util.Scanner;
 
-import static ru.job4j.tracker.Tracker.generateDescription;
-
 public class StartUI {
 
     public void init(Scanner scanner, Tracker tracker) {
@@ -51,8 +49,13 @@ public class StartUI {
                 System.out.print("Enter name: ");
                 String name = scanner.nextLine();
                 Item[] items = tracker.findByName(name);
-                System.out.println(
-                        items.length > 0 ? generateDescription(items) : "Заявки с именем: " + name + " не найдены.");
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Заявки с именем: " + name + " не найдены.");
+                }
             } else if (select == 6) {
                 run = false;
             }

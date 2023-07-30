@@ -19,7 +19,7 @@ public class StartUITest {
     @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("Replaced item")); /* Добавляется в tracker новая заявка */
+        Item item = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         Input in = new StubInput("0", String.valueOf(item.getId()), replacedName, "1");
         UserAction[] actions = {
@@ -33,7 +33,7 @@ public class StartUITest {
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("Deleted item")); /* Добавляется в tracker новая заявка */
+        Item item = tracker.add(new Item("Deleted item"));
         Input in = new StubInput("0", String.valueOf(item.getId()), "1");
         UserAction[] actions = {
                 new DeleteAction(),

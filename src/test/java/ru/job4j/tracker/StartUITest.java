@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StartUITest {
@@ -143,6 +144,26 @@ public class StartUITest {
                         + "Menu." + ln
                         + "0. Edit item" + ln
                         + "1. Exit Program" + ln
+                        + "=== Exit Program ===" + ln
+        );
+    }
+
+    @Test
+    public void whenInvalidExit() {
+        Output out = new StubOutput();
+        Input in = new StubInput("1", "0");
+        Tracker tracker = new Tracker();
+        UserAction[] actions = new UserAction[]{
+                new ExitProgram(out)
+        };
+        new StartUI().init(in, out, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString()).isEqualTo(
+                "Menu." + ln
+                        + "0. Exit Program" + ln
+                        + "Wrong input, you can select: 0 .. 0" + ln
+                        + "Menu." + ln
+                        + "0. Exit Program" + ln
                         + "=== Exit Program ===" + ln
         );
     }

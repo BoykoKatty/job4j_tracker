@@ -76,7 +76,7 @@ public class StartUITest {
     public void whenFindActionsByName() {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Searched item"));
-        Input in = new StubInput("0", String.valueOf(item.getName()), "1");
+        Input in = new StubInput("0", item.getName(), "1");
         Output output = new StubOutput();
         UserAction[] actions = {
                 new FindActionsByName(output),

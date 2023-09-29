@@ -1,7 +1,7 @@
 package ru.job4j.ooa;
 
 public class Airport {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         final Airbus airbus = new Airbus("A320");
         System.out.println(airbus);
         airbus.printModel();
@@ -10,5 +10,6 @@ public class Airport {
         airbus.setName("A380");
         System.out.println(airbus);
         airbus.printCountEngine();
+        airbus.testProtected();
     }
 }

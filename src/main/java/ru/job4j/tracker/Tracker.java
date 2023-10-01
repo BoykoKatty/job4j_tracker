@@ -15,11 +15,13 @@ public class Tracker {
 
     private int indexOf(int id) {
         int rsl = -1;
+        int index = 0;
         for (Item item:items) {
-            rsl++;
             if (item.getId() == id) {
+                rsl = index;
                 break;
             }
+            index++;
         }
         return rsl;
     }
@@ -55,6 +57,6 @@ public class Tracker {
 
     public boolean delete(int id) {
         int index = indexOf(id);
-        return items.remove(items.get(index));
+        return index != -1 && items.remove(items.get(index));
     }
 }

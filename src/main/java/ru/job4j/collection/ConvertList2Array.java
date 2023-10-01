@@ -9,9 +9,7 @@ public class ConvertList2Array {
         int[][] array = new int[rows][cells];
         int row = 0, cell = 0;
         for (Integer num : list) {
-            if (row == rows && cell == cells) {
-                break;
-            } else if (cell == cells) {
+            if (cell == cells) {
                 cell = 0;
                 row++;
             }

@@ -16,9 +16,6 @@ public class AppleStore {
         Customer lastHappyCustomer = null;
         for (int i = 0; i < count; i++) {
             lastHappyCustomer = queue.poll();
-            if (queue.isEmpty()) {
-                break;
-            }
         }
         return lastHappyCustomer != null ? lastHappyCustomer.name() : "";
     }

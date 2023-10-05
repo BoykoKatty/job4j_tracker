@@ -58,7 +58,8 @@ public class AnalyzeByMap {
         double mark = 0;
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                subjectMap.getOrDefault(subject.name(), new ArrayList<>()).add(subject.score());
+                subjectMap.put(subject.name(), subjectMap.getOrDefault(subject.name(), new ArrayList<>()));
+                subjectMap.get(subject.name()).add(subject.score());
             }
         }
         for (Map.Entry<String, List<Integer>> subjectScores : subjectMap.entrySet()) {
